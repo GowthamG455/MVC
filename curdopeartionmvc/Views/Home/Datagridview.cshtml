@@ -1,0 +1,83 @@
+﻿@model IEnumerable<curdopeartionmvc.employee>
+
+@{
+    ViewBag.Title = "Datagridview";
+}
+
+<h2>Datagridview</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fristname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lastname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mobilenumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateofJoining)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBrith)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Qualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Department)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+          <td>
+            @Html.DisplayFor(modelItem => item.EmployeeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fristname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mobilenumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateofJoining)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBrith)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Qualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeId, EmployeeId = item.EmployeeId }) |
+
+            @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeId, EmployeeId = item.EmployeeId })|
+        
+            @*@Html.ActionLink("mobilenumber", "mobilenumber", new { id = item.Mobilenumber, Mobilenumber = item.Mobilenumber })|*@
+        </td>
+    </tr>
+}
+
+</table>
